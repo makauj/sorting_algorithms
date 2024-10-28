@@ -4,7 +4,7 @@
 /**
  * get_rank_index - Helper function to get rank index
  * @value: value
- * 
+ *
  * Return: an index for each rank and suit
  */
 int get_rank_index(const char *value)
@@ -27,7 +27,7 @@ int get_rank_index(const char *value)
  * compare_nodes - Function to compare two nodes
  * @a: node a
  * @b: node b
- * 
+ *
  * Return: the comparison
  */
 int compare_nodes(deck_node_t *a, deck_node_t *b)
@@ -43,12 +43,12 @@ int compare_nodes(deck_node_t *a, deck_node_t *b)
 	return (a->card->kind - b->card->kind);
 }
 
-/** 
+/**
  * swap_nodes - Swap two adjacent nodes (a and b) in the list
  * @deck: head pointer
  * @a: node a
  * @b: node b
- * 
+ *
  */
 void swap_nodes(deck_node_t **deck, deck_node_t *a, deck_node_t *b)
 {
@@ -70,6 +70,7 @@ void swap_nodes(deck_node_t **deck, deck_node_t *a, deck_node_t *b)
 /**
  * sort_deck - Sort deck using insertion sort
  * @deck: the deck
+ *
  */
 void sort_deck(deck_node_t **deck)
 {
