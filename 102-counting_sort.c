@@ -8,8 +8,8 @@
 
 void counting_sort(int *array, size_t size)
 {
-	int max, *count;
-	size_t i, index;
+	int *count;
+	size_t i, index, max;
 
 	if (!array || size <= 1)
 		return;
@@ -17,7 +17,7 @@ void counting_sort(int *array, size_t size)
 	max = array[0];
 	for (i = 1; i < size; i++)
 	{
-		if (array[i] > max)
+		if (array[i] > (int)max)
 			max = array[i];
 	}
 	/* Create a counting array */
