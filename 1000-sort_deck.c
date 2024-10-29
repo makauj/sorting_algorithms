@@ -76,7 +76,7 @@ void sort_deck(deck_node_t **deck)
 {
 	deck_node_t *current, *sorted, *next;
 
-	if (!deck || !*deck || !(*deck)->next)
+	if (!deck || !(*deck) || !(*deck)->next)
 		return;
 
 	sorted = *deck;

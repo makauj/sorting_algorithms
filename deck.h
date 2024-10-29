@@ -5,6 +5,13 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ * enum kind_e - Enumeration of card suits
+ * @SPADE: Spades suit
+ * @HEART: Hearts suit
+ * @CLUB: Club suit
+ * @DIAMOND: Diamond suit
+ */
 typedef enum kind_e
 {
 	SPADE = 0,
