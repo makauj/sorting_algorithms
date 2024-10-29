@@ -2,6 +2,24 @@
 
 
 /**
+ * _strcmp - compare two strings
+ * @s1: string 1
+ * @s2: string 2
+ * 
+ * Return: the difference between s1 and s2
+ */
+int _strcmp(const char *s1, const char *s2)
+{
+	while (*s1 && *s2 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	if (*s1 != *s2)
+		return (*s1 - *s2);
+	return (0);
+}
+/**
  * get_rank_index - Helper function to get rank index
  * @value: value
  *
@@ -17,7 +35,7 @@ int get_rank_index(const char *value)
 
 	for (i = 0; i < 13; i++)
 	{
-		if (strcmp(value, values[i]) == 0)
+		if (_strcmp(value, values[i]) == 0)
 			return (i);
 	}
 	return (-1); /* should never reach here if all values are valid */
