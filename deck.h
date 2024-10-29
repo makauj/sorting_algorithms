@@ -51,5 +51,6 @@ void sort_deck(deck_node_t **deck);
 int get_rank_index(const char *value);
 int compare_nodes(deck_node_t *a, deck_node_t *b);
 void swap_nodes(deck_node_t **deck, deck_node_t *a, deck_node_t *b);
+int _strcmp(const char *s1, const char *s2);
 
 #endif /* DECK_H */
