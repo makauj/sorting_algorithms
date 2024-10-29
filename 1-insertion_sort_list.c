@@ -2,29 +2,41 @@
 
 /**
  * insertion_sort_list - simple sorting algorithm
- * @list: list
+ * @list: double pointer to the head of the list
  */
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *current = NULL, *next = NULL, *temp = NULL;
+	listint_t *node = NULL, *tmp = NULL;
 
-	if (!list || !*list || !((*list)->next))
+	if (!list || !(*list) || !((*list)->next))
 		return;
 
-	current = (*list)->next;
-
-	while (current)
+	node = *list;
+	node = node->next;
+	while (node)
 	{
-		next = current->next;
-		temp = current->prev;
-
-		while (temp && temp->n > current->n)
+		while (node->prev && node->n < (node->prev)->n)
 		{
-			swap_nodes(list, temp, current);
+			tmp = node;
+
+			if (node->next)
+				(node->next)->prev = tmp->prev;
+
+			(node->prev)->next = tmp->next;
+			node = node->prev;
+			tmp->prev = node->prev;
+			tmp->next = node;
+
+			if (node->prev)
+				(node->prev)->next = tmp;
+			node->prev = tmp;
+
+			if (tmp->prev == NULL)
+				*list = tmp;
 			print_list(*list);
-			temp = current->prev;
+			node = node->prev;
 		}
-		current = next;
+		node = node->next;
 	}
 }
